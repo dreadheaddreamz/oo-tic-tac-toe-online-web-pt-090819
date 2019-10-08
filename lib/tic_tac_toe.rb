@@ -19,19 +19,19 @@ def input_to_index(string)
   string.to_i-1
     end
     
-    def move(index, token ="X")
+def move(index, token ="X")
       @board[index] = token
     end
     
-    def position_taken?(index)
+def position_taken?(index)
       @board[index] != " "
     end
     
-    def valid_move?(index)
+def valid_move?(index)
       index.between?(0,8) && !position_taken?(index)
     end
     
-    def turn_count
+def turn_count
       counter = 0 
       @board.each do |i|
         if i == "X" || i == "O"
@@ -41,8 +41,6 @@ def input_to_index(string)
     counter
     end
   
-
-
 
 def current_player
   turn_count.even? ? "X" : "O"
@@ -99,10 +97,5 @@ def play
   else
     puts "Cat's Game!"
   end
-  
-  
 end
-
-
-
 end
